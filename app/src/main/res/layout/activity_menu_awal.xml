@@ -1,0 +1,234 @@
+<RelativeLayout android:id="@+id/mainLyt"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:id="@+id/svWebView"
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:paddingBottom="60dp">
+
+        <WebView
+            android:id="@+id/wvMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></WebView>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/svListProduct"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:visibility="gone"
+        android:paddingBottom="60dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lvProduct"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="vertical"
+            />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"
+            android:src="@drawable/ic_action_add"
+            >
+
+        </android.support.design.widget.FloatingActionButton>
+
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/svSetting"
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:paddingBottom="55dp"
+        android:background="@android:color/white"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/SettingsProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop" />
+
+            <odoo.controls.OForm
+                android:id="@+id/profileDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8dp"
+                android:orientation="vertical"
+                app:modelName="res.users">
+
+                <odoo.controls.OField
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:controlLabel="Name"
+                    app:fieldLabelColor="@color/theme_primary"
+                    app:fieldName="name"
+                    app:fieldTextSize="@dimen/text_size_xmedium"
+                    app:showIcon="false"></odoo.controls.OField>
+
+                <odoo.controls.OField
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:controlLabel="USER LOGIN"
+                    app:fieldLabelColor="@color/theme_primary"
+                    app:fieldName="user_login"
+                    app:fieldTextSize="@dimen/text_size_xmedium"
+                    app:showIcon="false"></odoo.controls.OField>
+
+                <odoo.controls.OField
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:controlLabel="SERVER URL"
+                    app:fieldLabelColor="@color/theme_primary"
+                    app:fieldName="server_url"
+                    app:fieldTextSize="@dimen/text_size_xmedium"
+                    app:showIcon="false"></odoo.controls.OField>
+
+                <odoo.controls.OField
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:controlLabel="DATABASE"
+                    app:fieldLabelColor="@color/theme_primary"
+                    app:fieldName="database"
+                    app:fieldTextSize="@dimen/text_size_xmedium"
+                    app:showIcon="false"></odoo.controls.OField>
+
+                <odoo.controls.OField
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:controlLabel="ODOO VERSION"
+                    app:fieldLabelColor="@color/theme_primary"
+                    app:fieldName="version"
+                    app:fieldTextSize="@dimen/text_size_xmedium"
+                    app:showIcon="false"></odoo.controls.OField>
+
+                <odoo.controls.OField
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:controlLabel="TIMEZONE"
+                    app:fieldLabelColor="@color/theme_primary"
+                    app:fieldName="timezone"
+                    app:fieldTextSize="@dimen/text_size_xmedium"
+                    app:showIcon="false"></odoo.controls.OField>
+
+
+            </odoo.controls.OForm>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button android:id="@+id/btnProfileLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:gravity="left"
+                    android:background="@drawable/logout_button"
+                    android:padding="15dp"
+                    android:textColor="@color/colorPrimary"
+                    style="?android:attr/borderlessButtonStyle"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btnDashboard"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_apps_black_24dp"
+            android:drawablePadding="5dp"
+            android:textSize="8sp"
+            android:text="DASHBOARD"/>
+
+        <Button
+            android:id="@+id/btnPOS"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:drawableTop="@drawable/ic_local_mall_black_24dp"
+            android:drawablePadding="5dp"
+            android:text="POS"/>
+
+        <Button
+            android:id="@+id/btnProducts"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:drawableTop="@drawable/ic_store_black_24dp"
+            android:drawablePadding="5dp"
+            android:text="PRODUCTS"/>
+
+        <Button
+            android:id="@+id/btnInvoicing"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:drawableTop="@drawable/ic_receipt_black_24dp"
+            android:drawablePadding="5dp"
+            android:text="INVOICING"/>
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:drawableTop="@drawable/ic_settings_black_24dp"
+            android:drawablePadding="5dp"
+            android:text="Settings"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_dashboard"
+        android:title="DASHBOARD"
+        android:icon="@drawable/ic_apps_black_24dp" />
+    <item android:id="@+id/action_pos"
+        android:title="POS"
+        android:icon="@drawable/ic_local_mall_black_24dp" />
+    <item android:id="@+id/action_products"
+        android:title="PRODUCTS"
+        android:icon="@drawable/ic_store_black_24dp" />
+    <item android:id="@+id/action_invoicing"
+        android:title="INVOICING"
+        android:icon="@drawable/ic_receipt_black_24dp" />
+    <item android:id="@+id/action_settings"
+        android:title="SETTINGS"
+        android:icon="@drawable/ic_settings_black_24dp" />
+</menu>
